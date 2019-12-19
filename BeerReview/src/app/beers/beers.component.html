@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"  *ngFor="let beer of beers">
+            <div class="card" style="max-height: 250px;max-width: 200px;margin-top: 25px;">
+                <div class="mycard"  style="height: 300px;background: #e8e8e8ba;"  routerLink="/beers-details/{{beer.beerId}}">
+                    <div style="text-align: center;">
+                        <img src="assets/img/{{beer.logoUrl}}"  style="max-height: 150px;" class="img-rounded" alt="{{beer.brand}}">
+                    </div>
+                    <div style="text-align: center;">
+                        <p>{{beer.brand}}({{beer.alcohol}}%) <p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p>{{beer.price}}€<p>
+                    </div>
+              </div>
+        </div>
+        <div *ngIf="check()">
+            <button class="btn btn-primary"  routerLink="/beers-delete/{{beer.beerId}}">Delete</button>
+        </div>
+    </div>
+  </div>
+<div *ngIf="check()">
+  <app-beers-add>  </app-beers-add>
+</div>

@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit(commentForm)" #commentForm="ngForm" style="max-width: 35%;margin-top: 4%;">
+
+    <div class="form-group">
+      <label for="text">Text:</label>
+      <textarea type="text" class="form-control" id="text" required  [(ngModel)]="comment.Text" name="text" #text="ngModel"></textarea>
+      <div [hidden]="text.valid || text.pristine"
+      class="alert alert-danger">
+        Text is required
+ </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!commentForm.form.valid" >Submit</button>
+  </form>

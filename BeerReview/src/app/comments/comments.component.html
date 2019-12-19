@@ -1,0 +1,23 @@
+<div class="container"style="margin-top: 50px" >
+
+    <div  *ngIf="comments.length > 0; else elseBlock">
+    <div *ngFor="let comment of comments">
+    <div class="card" style="max-width: 40%; margin-bottom: 2%;">
+            <div class="card-body">
+                <div class="col" style="text-align: right;"><p>{{comment?.date | date:'short'}}</p></div>
+
+               <p style="text-align: left;"> {{comment?.text}} </p>
+            
+            </div>
+    </div>
+    </div>
+    </div>
+    <ng-template #elseBlock>
+            <h5>No comments</h5>
+     </ng-template>
+     <!--(commentAdded)="onCommentSent($event)"-->
+     
+
+    </div>
+
+    <app-comments-add  (commentAdded)="onCommentSent($event)"></app-comments-add>

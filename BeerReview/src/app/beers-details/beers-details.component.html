@@ -1,0 +1,38 @@
+<div class="container" style="margin-top:30px; margin-bottom: 5%; text-align: center;">
+    <div>
+        <div class="row">
+            <div class="col-sm-5">
+                <img src="assets/img/{{beer?.logoUrl}}"  style="max-height: 200px;" class="img-rounded" alt="{{beer?.brand}}">
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <h1>{{beer?.brand}}</h1>
+                </div>
+                <div class="row">
+                    <table class="table table-borderless" style="text-align: left;">
+                        <tbody>
+                          <tr>
+                              <th>Alcohol</th>
+                              <td>{{beer?.alcohol}} %</td>
+                          </tr>
+                          <tr>
+                            <th>Size</th>
+                            <td>{{beer?.size}} L.</td>
+                        </tr>
+                        <tr>
+                            <th>Price</th>
+                            <td>{{beer?.price}} €</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{beer?.description}}</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+          </div>
+    <div>
+</div>
+
+<app-comments></app-comments>

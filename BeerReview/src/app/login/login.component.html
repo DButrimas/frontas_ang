@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit(commentForm)" #commentForm="ngForm" style="max-width: 35%;margin-top: 4%; margin: auto;">
+
+    <div  class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email" #email="ngModel">
+           <div [hidden]="email.valid || email.pristine"
+                class="alert alert-danger">
+                  Email is required
+           </div>
+      </div >
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" required [(ngModel)]="user.Password" name="pwd" #pwd="ngModel">
+           <div [hidden]="pwd.valid || pwd.pristine"
+                class="alert alert-danger">
+                  Password is required
+           </div>
+      </div>
+      <div *ngIf="check()">
+    <h5 style="color: red;">Invalid email or password.</h5>
+      </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="!commentForm.form.valid" >Submit</button>
+  </form>
